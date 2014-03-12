@@ -1,0 +1,37 @@
+{
+  "name": "jquery-scroll-on-mongoose",
+  "description": "A front-end jquery plugin, provide endless scrolling function based on jonas's mongoose-paginator on the back-end. Benefit: avoid usage of cursor.skip in mongodb",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yi/jquery-scroll-on-mongoose",
+  "author": {
+    "name": "Yi",
+    "email": "yi2004@gmail.com",
+    "url": "https://github.com/yi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yi/jquery-scroll-on-mongoose.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yi/jquery-scroll-on-mongoose/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/yi/jquery-scroll-on-mongoose/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/jquery-scroll-on-mongoose",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "na"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "scrolling",
+    "paginate"
+  ]
+}
