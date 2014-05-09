@@ -235,7 +235,7 @@ class MongooseEndlessScroll
     return
 
   addInResults : (results, direction)->
-    #results.reverse() if direction is DIRECTION_UP
+    results.reverse() if direction is DIRECTION_UP
     for result in results
       id = result._id
       continue if ~@ids.indexOf(id)
