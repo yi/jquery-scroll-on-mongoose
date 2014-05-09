@@ -21,7 +21,7 @@
       "url": "https://github.com/yi/jquery-scroll-on-mongoose/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/jquery-scroll-on-mongoose",
+  "main": "jquery-scroll-on-mongoose",
   "engines": {
     "node": ">= 0.8.0"
   },
