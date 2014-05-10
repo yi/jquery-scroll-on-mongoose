@@ -114,7 +114,7 @@ build = (watch, callback) ->
     callback = watch
     watch = false
 
-  options = ['-c', '-b', '-o', 'lib', 'src']
+  options = ['-c', '-b', '-o', '.', '.']
   options.unshift '-w' if watch
   launch 'coffee', options, callback
 

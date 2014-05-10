@@ -9,7 +9,7 @@ class MongooseEndlessScroll
 
   DEFAULTS =
     itemsToKeep:       null
-    inflowPixels:      50
+    inflowPixels:      30
     intervalFrequency: 250
     autoStart : true
     htmlLoading : "Loading..."
@@ -39,7 +39,7 @@ class MongooseEndlessScroll
     @options = $.extend({}, DEFAULTS , options)
     @container = $(options.container)
 
-    @elControlUp = @options.elControlUp
+    @elControlUp = $(@options.elControlUp)
     @elControlUp.click => @fetchUp()
     @elControlDown = @options.elControlDown
     @elControlDown.click => @fetchDown()
@@ -57,16 +57,20 @@ class MongooseEndlessScroll
 
     @showLoading false
 
-    #scrollListener = =>
-      #$(window).one "scroll", =>
-        #if ($(window).scrollTop() >= $(document).height() - $(window).height() - @options.inflowPixels)
-          #@fetchDown()
+    scrollListener = =>
+      $(window).one "scroll", =>
+        bottomBoundary = $(document).height() - $(window).height() - @options.inflowPixels / 2
+        if ($(window).scrollTop() >= bottomBoundary)
+          @fetchDown()
+          $(window).scrollTop(bottomBoundary - 20)
+          #$("html, body").animate({ scrollTop: bottomBoundary - 50}, 1000)
         #else if $(window).scrollTop() <= @options.inflowPixels
           #@fetchUp()
-        #setTimeout scrollListener, @options.intervalFrequency
+          #$("html, body").animate({ scrollTop: @options.inflowPixels + 50 }, 1000)
+        setTimeout scrollListener, @options.intervalFrequency
 
     $(document).ready =>
-      #scrollListener()
+      scrollListener()
       if @options.autoStart then @fetchDown()
 
     return
