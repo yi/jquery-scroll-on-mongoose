@@ -252,9 +252,9 @@ class MongooseEndlessScroll
       @idToData[id] = result
     return
 
-  getDisplayedTopmostId : -> $("#{@container.selector} #{@options.itemElementName}").first().attr("id")
+  getDisplayedTopmostId : -> $("#{@container.selector}>#{@options.itemElementName}").first().attr("id")
 
-  getDisplayedBottommostId : -> $("#{@container.selector} #{@options.itemElementName}").last().attr("id")
+  getDisplayedBottommostId : -> $("#{@container.selector}>#{@options.itemElementName}").last().attr("id")
 
   renderTopPartial : ()->
     topmostId = @getDisplayedTopmostId()
